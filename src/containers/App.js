@@ -4,6 +4,7 @@ import CardList from "../components/CardList";
 import SearchBox from '../components/SearchBox'
 import './App.css'
 import Scroll from '../components/Scroll'
+import ErrorBoundry from '../components/ErrorBoundry'
 
 // STATE => Object that describes the application(robots in the searchbox)
 // STATE => PROPS
@@ -42,7 +43,9 @@ class App extends Component {
                     <h1 className='f1'>Robo Friends</h1>
                     <SearchBox searchChange={this.onSearchChange}/>
                     <Scroll>
+                        <ErrorBoundry>
                         <CardList robots={filterRobots}/>
+                        </ErrorBoundry>
                     </Scroll>
                 </div>
             )
